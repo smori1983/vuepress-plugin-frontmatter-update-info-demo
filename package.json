@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-frontmatter-update-info": "^1.1.0",
+    "vuepress-types": "^0.9.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/smori1983/vuepress-plugin-frontmatter-update-info-demo.git"
