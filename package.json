@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "vuepress dev --no-cache docs",
+    "build": "vuepress build docs",
+    "server": "http-server docs/.vuepress/dist"
+  },
   "dependencies": {},
   "devDependencies": {
     "http-server": "^14.1.1",
