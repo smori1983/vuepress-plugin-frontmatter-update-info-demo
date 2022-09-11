@@ -8,18 +8,11 @@
     "build": "vuepress build docs",
     "server": "http-server docs/.vuepress/dist"
   },
-  "dependencies": {
-    "escape-html": "^1.0.3",
-    "sprintf-js": "^1.1.2",
-    "vuejs-datepicker": "^1.6.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@vuepress/plugin-back-to-top": "^1.9.7",
     "http-server": "^14.1.1",
     "vuepress": "^1.9.7",
-    "vuepress-plugin-md-enhance": "^1.30.0",
-    "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-types": "^0.9.4"
   },
   "repository": {
