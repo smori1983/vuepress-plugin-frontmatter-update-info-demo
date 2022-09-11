@@ -19,7 +19,6 @@ module.exports = {
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/demo/keyboard_event.md',
           '/demo/auto_link_label.md',
           '/demo/update_info.md',
           '/demo/gitgraph_editor.md',
@@ -63,8 +62,6 @@ module.exports = {
     ['gitgraph-minigram', {
       marker: 'gitgraph',
     }],
-
-    ['keyboard-event-debug'],
 
     ['tags'],
   ],
