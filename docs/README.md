@@ -1,5 +1,4 @@
 ---
-home: false
 ---
 # Demo site
 
