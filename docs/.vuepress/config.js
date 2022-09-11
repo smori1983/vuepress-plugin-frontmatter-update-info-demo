@@ -20,8 +20,6 @@ module.exports = {
         sidebarDepth: 0,
         children: [
           '/demo/update_info.md',
-          '/demo/gitgraph_editor.md',
-          '/demo/gitgraph_demo.md',
         ],
       },
       {
@@ -42,10 +40,6 @@ module.exports = {
 
     ['frontmatter-update-info', {
       pageEmbed: true,
-    }],
-
-    ['gitgraph-minigram', {
-      marker: 'gitgraph',
     }],
   ],
 

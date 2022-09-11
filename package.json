@@ -19,7 +19,6 @@
     "http-server": "^14.1.1",
     "vuepress": "^1.9.7",
     "vuepress-plugin-frontmatter-update-info": "^1.1.0",
-    "vuepress-plugin-gitgraph-minigram": "^1.1.0",
     "vuepress-plugin-md-enhance": "^1.30.0",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-types": "^0.9.4"
