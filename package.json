@@ -10,7 +10,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@vuepress/shared-utils": "^1.9.7",
     "vuepress": "^1.9.7",
     "vuepress-types": "^0.9.4"
   },
