@@ -1,3 +1,0 @@
-# Data binding demo
-
-<PlaygroundDataBinding/>

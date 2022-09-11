@@ -11,7 +11,6 @@ module.exports = {
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/debug/site_pages.md',
           '/debug/update_info.md',
         ],
       },
@@ -20,7 +19,6 @@ module.exports = {
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/demo/data_binding.md',
           '/demo/keyboard_event.md',
           '/demo/auto_link_label.md',
           '/demo/update_info.md',
@@ -48,16 +46,6 @@ module.exports = {
           '/plugin_tags/page02.md',
         ],
       },
-      {
-        path: '/misc/',
-        title: 'Misc',
-        collapsable: false,
-        sidebarDepth: 0,
-        children: [
-          '/misc/table_search.md',
-          '/release/',
-        ],
-      },
     ],
   },
 
@@ -79,14 +67,6 @@ module.exports = {
     ['keyboard-event-debug'],
 
     ['tags'],
-
-    [require('./plugins/playground-data-binding')],
-
-    [require('./plugins/playground-release-diary')],
-
-    [require('./plugins/playground-site-pages')],
-
-    [require('./plugins/playground-table-search')],
   ],
 
   markdown: {
