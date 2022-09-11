@@ -1,5 +1,5 @@
 module.exports = {
-  //base: '/vuepress-plugin-frontmatter-update-info-demo/',
+  base: '/vuepress-plugin-frontmatter-update-info-demo/',
   title: 'vuepress-plugin-frontmatter-update-info',
   dest: 'docs/.vuepress/dist',
 
