@@ -1,7 +1,7 @@
 ---
 home: false
 ---
-# Example site
+# Demo site
 
 
 ## Config
