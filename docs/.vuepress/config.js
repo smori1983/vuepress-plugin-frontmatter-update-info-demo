@@ -19,7 +19,6 @@ module.exports = {
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/demo/auto_link_label.md',
           '/demo/update_info.md',
           '/demo/gitgraph_editor.md',
           '/demo/gitgraph_demo.md',
@@ -40,10 +39,6 @@ module.exports = {
 
   plugins: [
     ['@vuepress/back-to-top'],
-
-    ['auto-link-label', {
-      marker: '!',
-    }],
 
     ['frontmatter-update-info', {
       pageEmbed: true,
