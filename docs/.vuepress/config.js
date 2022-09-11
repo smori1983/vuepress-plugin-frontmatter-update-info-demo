@@ -59,8 +59,6 @@ module.exports = {
   },
 
   plugins: [
-    ['@vuepress/back-to-top'],
-
     //['frontmatter-update-info', {
     //  pageEmbed: true,
     //}],
