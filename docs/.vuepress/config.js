@@ -59,9 +59,9 @@ module.exports = {
   },
 
   plugins: [
-    ['frontmatter-update-info', {
-      pageEmbed: true,
-    }],
+    //['frontmatter-update-info', {
+    //  pageEmbed: true,
+    //}],
   ],
 
   markdown: {
