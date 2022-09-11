@@ -61,9 +61,21 @@ module.exports = {
   plugins: [
     ['@vuepress/back-to-top'],
 
-    //['frontmatter-update-info', {
-    //  pageEmbed: true,
-    //}],
+    ['auto-link-label', {
+      marker: '!',
+    }],
+
+    ['frontmatter-update-info', {
+      pageEmbed: true,
+    }],
+
+    ['gitgraph-minigram', {
+      marker: 'gitgraph',
+    }],
+
+    ['keyboard-event-debug'],
+
+    ['tags'],
   ],
 
   markdown: {
