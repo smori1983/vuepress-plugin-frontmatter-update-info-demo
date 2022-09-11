@@ -10,7 +10,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "7.19.0",
     "http-server": "^14.1.1",
     "vuepress": "^1.9.7",
     "vuepress-plugin-frontmatter-update-info": "^1.1.0",
