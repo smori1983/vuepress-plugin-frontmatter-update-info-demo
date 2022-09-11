@@ -20,7 +20,6 @@
     "vuepress": "^1.9.7",
     "vuepress-plugin-auto-link-label": "^1.1.0",
     "vuepress-plugin-frontmatter-update-info": "^1.1.0",
-    "vuepress-plugin-git-info": "^0.1.0",
     "vuepress-plugin-gitgraph-minigram": "^1.1.0",
     "vuepress-plugin-keyboard-event-debug": "^1.0.1",
     "vuepress-plugin-md-enhance": "^1.30.0",
