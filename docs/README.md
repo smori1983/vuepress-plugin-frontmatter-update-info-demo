@@ -1,18 +1,20 @@
 ---
+home: true
+heroText: example site
+tagline: vuepress-playground
+actionText: Get Started →
+actionLink: /debug/site_pages.html
+features:
+- title: feature 1
+  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- title: feature 2
+  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- title: feature 3
+  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
-# Demo site
 
+::: slot footer
+MIT Licensed
 
-## Config
-
-`.vuepress/config.js`
-
-```js
-module.exports = {
-  plugins: [
-    ['frontmatter-update-info', {
-      pageEmbed: true,
-    }],
-  ],
-};
-```
+[smori1983/vuepress-playground](https://github.com/smori1983/vuepress-playground)
+:::

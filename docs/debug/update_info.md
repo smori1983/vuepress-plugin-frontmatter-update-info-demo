@@ -1,0 +1,3 @@
+# Update info (debug)
+
+<PluginFrontmatterUpdateInfoDebug/>

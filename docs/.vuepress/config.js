@@ -5,54 +5,57 @@ module.exports = {
 
   themeConfig: {
     search: false,
-    nav: [
-      { text: 'npm', link: 'https://www.npmjs.com/package/vuepress-plugin-frontmatter-update-info' },
-    ],
     sidebar: [
       {
-        title: 'Main',
+        title: 'Debug',
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/debug.md',
-          '/update_info_list.md',
-          '/update_info_table.md',
+          '/debug/site_pages.md',
+          '/debug/update_info.md',
         ],
       },
       {
-        title: 'Pages: basic',
+        title: 'Demo',
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/pages/basic_01.md',
-          '/pages/basic_02.md',
-          '/pages/basic_03.md',
-          '/pages/basic_04.md',
-          '/pages/basic_05.md',
+          '/demo/data_binding.md',
+          '/demo/keyboard_event.md',
+          '/demo/auto_link_label.md',
+          '/demo/update_info.md',
+          '/demo/gitgraph_editor.md',
+          '/demo/gitgraph_demo.md',
         ],
       },
       {
-        title: 'Pages: custom tag',
+        title: 'Update info pages',
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/pages/custom_tag_01.md',
-          '/pages/custom_tag_02.md',
-          '/pages/custom_tag_03.md',
+          '/update_info/page01.md',
+          '/update_info/page02.md',
+          '/update_info/page03.md',
         ],
       },
       {
-        title: 'Pages: invalid',
+        title: 'Plugin (tags)',
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/pages/invalid_01.md',
-          '/pages/invalid_02.md',
-          '/pages/invalid_03.md',
-          '/pages/invalid_04.md',
-          '/pages/invalid_05.md',
-          '/pages/invalid_06.md',
-          '/pages/invalid_07.md',
+          '/plugin_tags/overview.md',
+          '/plugin_tags/page01.md',
+          '/plugin_tags/page02.md',
+        ],
+      },
+      {
+        path: '/misc/',
+        title: 'Misc',
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          '/misc/table_search.md',
+          '/release/',
         ],
       },
     ],
@@ -76,6 +79,14 @@ module.exports = {
     ['keyboard-event-debug'],
 
     ['tags'],
+
+    [require('./plugins/playground-data-binding')],
+
+    [require('./plugins/playground-release-diary')],
+
+    [require('./plugins/playground-site-pages')],
+
+    [require('./plugins/playground-table-search')],
   ],
 
   markdown: {

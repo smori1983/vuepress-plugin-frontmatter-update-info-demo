@@ -1,0 +1,3 @@
+# Table Search
+
+<PlaygroundTableSearchDefault/>
