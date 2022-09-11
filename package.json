@@ -14,7 +14,9 @@
     "vuejs-datepicker": "^1.6.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
     "@vuepress/plugin-back-to-top": "^1.9.7",
+    "http-server": "^14.1.1",
     "vuepress": "^1.9.7",
     "vuepress-plugin-auto-link-label": "^1.1.0",
     "vuepress-plugin-frontmatter-update-info": "^1.1.0",
