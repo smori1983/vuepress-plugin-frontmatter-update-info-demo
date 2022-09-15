@@ -7,4 +7,5 @@ module.exports = {
     },
   },
   targetBucket: 'XXXXX',
+  objectKey: 'XXXXX.json',
 };
