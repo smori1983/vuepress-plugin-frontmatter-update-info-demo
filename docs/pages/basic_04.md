@@ -1,11 +1,7 @@
 ---
 update_info:
-  - date: 2022/08/04
-    description:
-    - Update information.
-    - Update information.
-  - date: 2022/08/08
-    description: Update text of the page.
+  - date: 2022/09/15
+    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ---
 # Basic 04
 
@@ -20,11 +16,7 @@ update_info:
 ```
 ---
 update_info:
-  - date: 2022/08/04
-    description:
-    - Update information.
-    - Update information.
-  - date: 2022/08/08
-    description: Update text of the page.
+  - date: 2022/09/15
+    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ---
 ```

@@ -1,11 +1,9 @@
 ---
 update_info:
-- date: 2022/09/01
+- date: 2022/09/13
   description:
-    - Update information.
-- date: 2022/08/31
-  description:
-    - Update information.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ---
 # Custom tag 02
 
