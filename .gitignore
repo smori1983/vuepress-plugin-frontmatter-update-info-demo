@@ -110,3 +110,5 @@ dist
 
 # IntelliJ
 .idea/
+
+script_s3/config.local.js
