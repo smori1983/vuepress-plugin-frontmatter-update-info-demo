@@ -40,6 +40,13 @@ const getObject = async (client, bucket, key) => {
 
 (async () => {
   const client = new S3Client(clientConfig);
-  const json = await getObject(client, targetBucket, objectKey);
-  console.log(json);
+
+  try {
+    const json = await getObject(client, targetBucket, objectKey);
+    console.log(json);
+  } catch (e) {
+    console.log(e);
+  }
+
+  client.destroy();
 })();
