@@ -9,8 +9,8 @@ const {
 } = require('@aws-sdk/client-s3');
 
 const jsonData = {
-  generation_0: ['data1', 'data2', 'data3'],
-  generation_1: ['data4', 'data5', 'data6'],
+  date: new Date().toUTCString(),
+  list: ['a', 'b', 'c'],
 };
 
 const client = new S3Client(clientConfig);
