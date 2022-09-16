@@ -20,6 +20,14 @@ module.exports = {
         ],
       },
       {
+        title: 'Generation data',
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          '/generation_data/s3.md',
+        ],
+      },
+      {
         title: 'Pages: basic',
         collapsable: false,
         sidebarDepth: 0,
@@ -59,6 +67,8 @@ module.exports = {
   },
 
   plugins: [
+    [require('./plugins/generation-data-demo-s3')],
+
     ['frontmatter-update-info', {
       pageEmbed: true,
     }],

@@ -110,3 +110,6 @@ dist
 
 # IntelliJ
 .idea/
+
+docs/.vuepress/plugins/generation-data-demo-s3/config.local.js
+script_s3/config.local.js
