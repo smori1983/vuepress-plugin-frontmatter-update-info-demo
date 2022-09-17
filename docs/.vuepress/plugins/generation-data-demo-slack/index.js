@@ -21,7 +21,7 @@ let generationData = {
  * @return {PluginOptionAPI}
  */
 module.exports = () => ({
-  name: 'generation-data-demo-s3',
+  name: 'generation-data-demo-slack',
   plugins: [
     ['vuepress-plugin-frontmatter-update-info'],
   ],
