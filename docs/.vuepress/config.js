@@ -68,6 +68,7 @@ module.exports = {
 
   plugins: [
     [require('./plugins/generation-data-demo-s3')],
+    [require('./plugins/generation-data-demo-slack')],
 
     ['frontmatter-update-info', {
       pageEmbed: true,

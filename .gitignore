@@ -112,5 +112,6 @@ dist
 .idea/
 
 docs/.vuepress/plugins/generation-data-demo-s3/config.local.js
+docs/.vuepress/plugins/generation-data-demo-slack/config.local.js
 script_s3/config.local.js
 script_slack/config.local.js
