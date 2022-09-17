@@ -15,9 +15,7 @@ module.exports = () => ({
   plugins: [
     ['vuepress-plugin-frontmatter-update-info'],
   ],
-  enhanceAppFiles: [
-    path.resolve(__dirname, 'enhanceAppFile.js'),
-  ],
+  enhanceAppFiles: path.resolve(__dirname, 'enhanceAppFile.js'),
   clientDynamicModules() {
     return {
       name: 'generation-data-demo-s3/data.js',
