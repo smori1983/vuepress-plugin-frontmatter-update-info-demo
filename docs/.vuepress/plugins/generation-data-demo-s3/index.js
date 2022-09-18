@@ -74,8 +74,8 @@ const processS3 = async (updates) => {
   const savedData = await getObject(client, s3Config.bucket, s3ObjectKey);
   const savedJson = JSON.parse(savedData);
 
-  let generation_0 = updates;
-  let generation_1 = savedJson.generation_0 || [];
+  const generation_0 = updates;
+  const generation_1 = savedJson.generation_0 || [];
 
   data = {
     generation_0,
