@@ -54,6 +54,39 @@ if (fs.existsSync(localConfigFile)) {
   s3ObjectKey = 'vuepress-plugin-frontmatter-update-info.demo.s3.gh.json';
 }
 
+hook.addReadyCallback(async (updates) => {
+  if (s3Config === null) {
+    return;
+  }
+
+  await processS3(updates);
+});
+
+/**
+ * Handle Amazon S3.
+ *
+ * @param {Object[]} updates
+ * @return {Promise<void>}
+ */
+const processS3 = async (updates) => {
+  const client = new S3Client(s3Config.clientConfig);
+
+  const savedData = await getObject(client, s3Config.bucket, s3ObjectKey);
+  const savedJson = JSON.parse(savedData);
+
+  let generation_0 = updates;
+  let generation_1 = savedJson.generation_0 || [];
+
+  data = {
+    generation_0,
+    generation_1,
+  };
+
+  await putObject(client, s3Config.bucket, s3ObjectKey, JSON.stringify(data, null, 2));
+
+  client.destroy();
+};
+
 /**
  * @param {S3Client} client
  * @param {string} bucket
@@ -110,26 +143,3 @@ const putObject = async (client, bucket, key, generationData) => {
 
   await client.send(command);
 };
-
-hook.addReadyCallback(async (updates) => {
-  if (s3Config === null) {
-    return;
-  }
-
-  const client = new S3Client(s3Config.clientConfig);
-
-  const savedData = await getObject(client, s3Config.bucket, s3ObjectKey);
-  const savedJson = JSON.parse(savedData);
-
-  let generation_0 = updates;
-  let generation_1 = savedJson.generation_0 || [];
-
-  data = {
-    generation_0,
-    generation_1,
-  };
-
-  await putObject(client, s3Config.bucket, s3ObjectKey, JSON.stringify(data, null, 2));
-
-  client.destroy();
-});
