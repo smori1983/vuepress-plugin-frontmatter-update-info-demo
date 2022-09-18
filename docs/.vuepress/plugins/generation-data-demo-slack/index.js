@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
 const S3 = require('./s3');
-const { WebClient } = require('@slack/web-api');
+const Slack = require('./slack');
 
 let generationData = {
   generation_0: [],
@@ -114,12 +114,8 @@ const processSlack = async () => {
     textLines.push('');
   });
 
-  const web = new WebClient(slackConfig.token);
-
-  await web.chat.postMessage({
-    channel: slackConfig.channel_id,
-    text: textLines.join('\n'),
-  });
+  const slack = new Slack(slackConfig.token, slackConfig.channel_id);
+  await slack.postMessage(textLines.join('\n'));
 };
 
 /**
