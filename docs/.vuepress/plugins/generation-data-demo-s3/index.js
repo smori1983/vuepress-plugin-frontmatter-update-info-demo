@@ -2,6 +2,15 @@
  * @typedef {import('vuepress-types').PluginOptionAPI} PluginOptionAPI
  */
 
+const fs = require('fs');
+const path = require('path');
+const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
+const {
+  S3Client,
+  GetObjectCommand,
+  PutObjectCommand,
+} = require('@aws-sdk/client-s3');
+
 let data = {
   generation_0: [],
   generation_1: [],
@@ -23,15 +32,6 @@ module.exports = () => ({
     };
   },
 });
-
-const fs = require('fs');
-const path = require('path');
-const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
-const {
-  S3Client,
-  GetObjectCommand,
-  PutObjectCommand,
-} = require('@aws-sdk/client-s3');
 
 let s3Config = null;
 let s3ObjectKey = null;
