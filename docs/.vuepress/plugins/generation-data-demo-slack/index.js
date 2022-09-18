@@ -5,11 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
-const {
-  S3Client,
-  GetObjectCommand,
-  PutObjectCommand,
-} = require('@aws-sdk/client-s3');
+const S3 = require('./s3');
 const { WebClient } = require('@slack/web-api');
 
 let generationData = {
@@ -72,78 +68,22 @@ hook.addGeneratedCallback(async (updates) => {
  * @return {Promise<void>}
  */
 const processS3 = async (updates) => {
-  const client = new S3Client(s3Config.clientConfig);
+  const s3 = new S3(s3Config.clientConfig, s3Config.bucket, s3ObjectKey);
 
-  const savedData = await getObject(client, s3Config.bucket, s3ObjectKey);
-  const savedJson = JSON.parse(savedData);
+  const savedData = JSON.parse(await s3.get());
 
+  // Rotate the generation data.
   const generation_0 = updates;
-  const generation_1 = savedJson.generation_0 || [];
+  const generation_1 = savedData.generation_0 || [];
 
   generationData = {
     generation_0,
     generation_1,
   };
 
-  await putObject(client, s3Config.bucket, s3ObjectKey, JSON.stringify(generationData, null, 2));
+  await s3.put(JSON.stringify(generationData, null, 2));
 
-  client.destroy();
-};
-
-/**
- * @param {S3Client} client
- * @param {string} bucket
- * @param {string} key
- * @return {Promise<string>}
- *
- * Thanks:
- * https://stackoverflow.com/questions/36942442/how-to-get-response-from-s3-getobject-in-node-js#36944450
- */
-const getObject = async (client, bucket, key) => {
-  const command = new GetObjectCommand({
-    Bucket: bucket,
-    Key: key,
-  });
-
-  const main = async () => {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const response = await client.send(command);
-        const chunks = [];
-
-        response.Body.once('error', (e) => reject(e));
-        response.Body.on('data', (chunk) => chunks.push(chunk));
-        response.Body.once('end', () => resolve(chunks.join('')));
-      } catch (e) {
-        return reject(e);
-      }
-    });
-  };
-
-  try {
-    return await main();
-  } catch (e) {
-    // This is also for the case when S3 object not created yet.
-    return '[]';
-  }
-};
-
-/**
- * @param {S3Client} client
- * @param {string} bucket
- * @param {string} key
- * @param {string} generationData
- * @return {Promise<void>}
- */
-const putObject = async (client, bucket, key, generationData) => {
-  const command = new PutObjectCommand({
-    Body: generationData,
-    Bucket: bucket,
-    ContentType: 'application/json',
-    Key: key,
-  });
-
-  await client.send(command);
+  s3.destroy();
 };
 
 /**
