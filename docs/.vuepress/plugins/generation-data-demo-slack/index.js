@@ -98,6 +98,8 @@ const processSlack = async () => {
     return;
   }
 
+  sortTargetPages(targetPages);
+
   const textLines = [];
 
   textLines.push(`*Update info: ${new Date().toLocaleString()}*`);
@@ -144,6 +146,19 @@ const extractTargetPages = () => {
   });
 
   return targetPages;
+};
+
+/**
+ * @param {Object[]} pages
+ */
+const sortTargetPages = (pages) => {
+  pages.sort((a, b) => {
+    if (a.dateLast === b.dateLast) {
+      return a.title > b.title ? 1 : -1;
+    }
+
+    return a.dateLast > b.dateLast ? -1 : 1;
+  });
 };
 
 /**
