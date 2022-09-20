@@ -1,11 +1,11 @@
 ---
 update_info:
-  - date: 2022/07/12
+  - date: 2022/09/20
     description:
-    - Update text for 2022/07/12.
-  - date: 2022/07/02
+    - Update text.
+  - date: 2022/09/10
     description:
-    - Update text for 2022/07/02.
+    - Update text.
 ---
 # Basic 02
 
@@ -20,11 +20,11 @@ update_info:
 ```
 ---
 update_info:
-  - date: 2022/07/12
+  - date: 2022/09/20
     description:
-    - Update text for 2022/07/12.
-  - date: 2022/07/02
+    - Update text.
+  - date: 2022/09/10
     description:
-    - Update text for 2022/07/02.
+    - Update text.
 ---
 ```
