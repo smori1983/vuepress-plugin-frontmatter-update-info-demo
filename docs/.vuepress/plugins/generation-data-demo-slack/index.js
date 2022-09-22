@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
-const orderBy = require('lodash/orderBy');
+const { differenceBy, orderBy } = require('lodash');
 const S3 = require('./s3');
 const Slack = require('./slack');
 
@@ -120,40 +120,20 @@ const processSlack = async () => {
 };
 
 /**
+ * Extract pages for notification.
+ *
+ * Targets:
+ * - New pages
+ * - Existing pages which 'recordsHash' was changed
+ *
  * @return {Object[]}
  */
 const extractTargetPages = () => {
-  const generation0Paths = generationData.generation_0.map(page => page.path);
-  const generation1Paths = generationData.generation_1.map(page => page.path);
-
-  const newPaths = generation0Paths.filter((path) => !generation1Paths.includes(path));
-  const existingPaths = generation0Paths.filter((path) => generation1Paths.includes(path));
-
-  const targetPages = [];
-
-  newPaths.forEach((path) => {
-    targetPages.push(findPageByPath(generationData.generation_0, path));
-  })
-
-  existingPaths.forEach((path) => {
-    const generation0Page = findPageByPath(generationData.generation_0, path);
-    const generation1Page = findPageByPath(generationData.generation_1, path);
-
-    if (generation0Page.recordsHash !== generation1Page.recordsHash) {
-      targetPages.push(generation0Page);
-    }
+  const targetPages = differenceBy(generationData.generation_0, generationData.generation_1, (page) => {
+    return `${page.path}:${page.recordsHash}`;
   });
 
   return orderBy(targetPages, ['dateLast', 'title'], ['desc', 'asc']);
-};
-
-/**
- * @param {Object[]} pages
- * @param {string} path
- * @return {Object}
- */
-const findPageByPath = (pages, path) => {
-  return pages.find(page => page.path === path);
 };
 
 /**
