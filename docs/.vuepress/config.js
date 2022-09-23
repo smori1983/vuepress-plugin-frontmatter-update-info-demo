@@ -25,6 +25,7 @@ module.exports = {
         sidebarDepth: 0,
         children: [
           '/generation_data/s3.md',
+          '/generation_data/slack.md',
         ],
       },
       {
