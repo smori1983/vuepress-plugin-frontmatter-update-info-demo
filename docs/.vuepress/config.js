@@ -74,6 +74,8 @@ module.exports = {
     ['frontmatter-update-info', {
       pageEmbed: true,
     }],
+
+    ['view-source'],
   ],
 
   markdown: {
