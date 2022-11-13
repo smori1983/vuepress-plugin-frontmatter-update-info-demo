@@ -3,6 +3,8 @@ home: false
 ---
 # Demo site
 
+Demo site for [vuepress-plugin-frontmatter-update-info](https://www.npmjs.com/package/vuepress-plugin-frontmatter-update-info).
+
 
 ## Config
 
@@ -23,3 +25,19 @@ module.exports = {
   ],
 };
 ```
+
+
+## Contents
+
+### Main
+
+Main pages are using components provided by default.
+If the page layout is enough, you can immediately provide update info page.
+
+### Generation data
+
+Simple examples to store frontmatter data by lifecycle hook callbacks and compose generation data.
+
+### Pages
+
+Markdown files to explain frontmatter description patterns.
