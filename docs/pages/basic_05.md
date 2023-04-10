@@ -4,10 +4,6 @@ update_info:
     description:
     - Update information.
     - Update information.
-  - date: 2022/08/31
-    description:
-    - Update information.
-    - Update information.
 ---
 ## Basic 05
 
@@ -23,10 +19,6 @@ update_info:
 ---
 update_info:
 - date: 2022/09/01
-  description:
-  - Update information.
-  - Update information.
-- date: 2022/08/31
   description:
   - Update information.
   - Update information.
