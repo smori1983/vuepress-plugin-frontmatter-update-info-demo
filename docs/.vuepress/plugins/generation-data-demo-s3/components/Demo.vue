@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h3>Page list: Update info newly added</h3>
+    <h3>Page list (update info newly added)</h3>
     <pre class="json">{{ newPaths }}</pre>
 
-    <h3>Page list: Update info already added</h3>
+    <h3>Page list (update info already added)</h3>
     <pre class="json">{{ existingPaths }}</pre>
 
     <h3>List of new update info</h3>
     <ul>
-      <li>New updates: add them all</li>
-      <li>Existing updates: add based on <code>recordsHash</code></li>
+      <li>New updates: added them all to list</li>
+      <li>Existing updates: added to list if descriptions edited (based on <code>recordsHash</code>)</li>
       <li>Empty list means there is no new update info between previous and current deployments.</li>
     </ul>
     <pre class="json">{{ targetPages }}</pre>

@@ -20,12 +20,21 @@ module.exports = {
         ],
       },
       {
-        title: 'Generation data',
+        title: 'Generation data (S3)',
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          '/generation_data/s3.md',
-          '/generation_data/slack.md',
+          '/generation_data_s3/intro.md',
+          '/generation_data_s3/demo.md',
+        ],
+      },
+      {
+        title: 'Generation data (S3 + Slack)',
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          '/generation_data_slack/intro.md',
+          '/generation_data_slack/demo.md',
         ],
       },
       {
