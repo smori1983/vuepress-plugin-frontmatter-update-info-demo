@@ -1,7 +1,7 @@
 ---
 update_info:
   - date: 2022/09/15
-    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
 # Basic 04
 
@@ -11,12 +11,12 @@ update_info:
 - Define description as string.
 
 
-## Frontmatter
+## Frontmatter source
 
 ```
 ---
 update_info:
   - date: 2022/09/15
-    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
 ```
