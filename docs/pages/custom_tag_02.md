@@ -10,7 +10,7 @@ update_info:
 
 ## Case
 
-- `[[update_info]]` is used multiple times in the page.
+- `[[update_info]]` is explicitly written multiple times in the page.
 
 
 ## h2

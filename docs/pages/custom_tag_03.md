@@ -17,7 +17,7 @@ update_info:
 
 ## Container
 
-Provided by `markdown-it-container` plugin.
+Container notation is provided by `markdown-it-container` plugin.
 
 Tag is processed, because the container is renderer and processed later than block rule.
 
@@ -34,7 +34,7 @@ Example to avoid being processed (surround by back quote):
 
 ## Code block
 
-Tag is not processed.
+Tag is not processed if written inside of code block.
 
 ```
 [[update_info]]
@@ -43,7 +43,7 @@ Tag is not processed.
 
 ## Table
 
-Tag is not processed.
+Tag is not processed if written inside of table cell.
 
 | key  | value           |
 |------|-----------------|
@@ -52,7 +52,7 @@ Tag is not processed.
 
 ## List
 
-Tag is not processed.
+Tag is not processed if written as part of list item.
 
 - [[update_info]]
 - [[update_info]]
