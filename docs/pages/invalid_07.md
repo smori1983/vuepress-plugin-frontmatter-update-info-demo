@@ -9,13 +9,16 @@ update_info:
 ---
 ### Invalid 07
 
+Defined as `###`.
+
 
 ## Reason
 
-- First heading is `<h3>` (`###`) and page embed component is not injected.
+- First heading is `###` (`<h3>`) and page embed component is not injected.
+- It should be `#` or `##`.
 
 
-## Frontmatter
+## Frontmatter source
 
 ```
 ---

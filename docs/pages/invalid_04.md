@@ -10,10 +10,10 @@ update_info:
 
 ## Reason
 
-- Record should be an array.
+- A record should be defined as the array element.
 
 
-## Frontmatter
+## Frontmatter source
 
 ```
 ---
@@ -22,5 +22,17 @@ update_info:
   description:
   - Update text of the page.
   - Update text of the page.
+---
+```
+
+should be:
+
+```
+---
+update_info:
+  - date: 2022/07/20
+    description:
+    - Update text of the page.
+    - Update text of the page.
 ---
 ```

@@ -6,10 +6,10 @@ update_info:
 
 ## Reason
 
-- No concrete records (value will be `null`).
+- No concrete records defined under `update_info` key.
 
 
-## Frontmatter
+## Frontmatter source
 
 ```
 ---
