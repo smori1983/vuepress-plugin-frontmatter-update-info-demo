@@ -6,111 +6,26 @@ const {
 const {
   S3Client,
 } = require('@aws-sdk/client-s3');
-const {
-  difference,
-  differenceBy,
-  intersection,
-  orderBy,
-} = require('lodash');
-const hash = require('hash-sum');
 const s3 = require('./s3');
+const Generation = require('./generation');
+const GenerationDiffDate = require('./generation-diff-date');
+const GenerationDiffDateDescription = require('./generation-diff-date-description');
 
 (async () => {
   const client = new S3Client(clientConfig);
 
   try {
     const json = await s3.getObject(client, targetBucket, objectKey);
-    console.log(JSON.stringify(getDiff(json), null, 2));
+    const data = JSON.parse(json);
+
+    const generation0 = new Generation(data.generation_0);
+    const generation1 = new Generation(data.generation_1);
+
+    console.log(JSON.stringify(new GenerationDiffDate().get(generation0, generation1), null, 2));
+    console.log(JSON.stringify(new GenerationDiffDateDescription().get(generation0, generation1), null, 2));
   } catch (e) {
     console.log(e);
   }
 
   client.destroy();
 })();
-
-/**
- * @param {string} json
- * @return {Object[]}
- */
-const getDiff = (json) => {
-  const data = JSON.parse(json);
-  const target = differenceBy(data.generation_0, data.generation_1, (page) => {
-    return `${page.path}:${page.recordsHash}`;
-  });
-
-  const result = [];
-
-  target.forEach((generation0Page) => {
-    const generation1Page = findPage(data.generation_1, generation0Page);
-
-    if (generation1Page) {
-      const generation0DateList = extractDate(generation0Page);
-      const generation1DateList = extractDate(generation1Page);
-
-      const newDateList = difference(generation0DateList, generation1DateList);
-      const existingDateList = intersection(generation0DateList, generation1DateList);
-
-      const targetRecords = [];
-
-      generation0Page.records.forEach((record) => {
-        if (newDateList.includes(record.date)) {
-          targetRecords.push(record);
-        } else if (existingDateList.includes(record.date)) {
-          const generation1Record = getRecord(generation1Page, record.date);
-
-          if (hash(record) !== hash(generation1Record)) {
-            targetRecords.push(record);
-          }
-        }
-      });
-
-      if (targetRecords.length > 0) {
-        result.push({
-          path: generation0Page.path,
-          title: generation0Page.title,
-          records: targetRecords,
-        });
-      }
-    } else {
-      result.push({
-        path: generation0Page.path,
-        title: generation0Page.title,
-        records: generation0Page.records,
-      });
-    }
-  });
-
-  return result;
-};
-
-/**
- * @param {Object[]} generationData
- * @param {Object} page
- * @return {(Object|undefined)}
- */
-const findPage = (generationData, page) => {
-  return generationData.find((p) => {
-    return p.path === page.path;
-  });
-};
-
-/**
- * @param {Object} page
- * @return {string[]}
- */
-const extractDate = (page) => {
-  const dateList = page.records.map((record) => record.date);
-
-  return orderBy(dateList);
-};
-
-/**
- * @param {Object} page
- * @param {string} date
- * @return {Object}
- */
-const getRecord = (page, date) => {
-  return page.records.find((record) => {
-    return record.date === date;
-  });
-};
