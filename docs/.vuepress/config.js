@@ -14,7 +14,9 @@ module.exports = {
         collapsable: false,
         sidebarDepth: 0,
         children: [
+          '/update_info_table_excerpt.md',
           '/update_info_table.md',
+          '/update_info_list_excerpt.md',
           '/update_info_list.md',
           '/debug.md',
         ],
