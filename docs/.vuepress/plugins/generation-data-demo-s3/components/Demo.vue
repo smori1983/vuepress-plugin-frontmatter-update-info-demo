@@ -42,8 +42,8 @@ export default {
 
     const targetPages = [];
 
-    this.newPaths = generation0Paths.filter((path) => !generation1Paths.includes(path));
-    this.existingPaths = generation0Paths.filter((path) => generation1Paths.includes(path));
+    this.newPaths = generation0Paths.filter((path) => !generation1Paths.includes(path)).sort();
+    this.existingPaths = generation0Paths.filter((path) => generation1Paths.includes(path)).sort();
 
     this.newPaths.forEach((path) => {
       targetPages.push(this.findPageByPath(data.generation_0, path));
