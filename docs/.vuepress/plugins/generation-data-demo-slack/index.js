@@ -4,8 +4,10 @@
 
 const fs = require('fs');
 const path = require('path');
+const { orderBy } = require('lodash');
 const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
-const { differenceBy, orderBy } = require('lodash');
+const Generation = require('vuepress-plugin-frontmatter-update-info/src/generation-util/generation');
+const DiffStyleDate = require('vuepress-plugin-frontmatter-update-info/src/generation-util/diff-style-date');
 const S3 = require('./s3');
 const Slack = require('./slack');
 
@@ -122,18 +124,14 @@ const processSlack = async () => {
 /**
  * Extract pages for notification.
  *
- * Targets:
- * - New pages
- * - Existing pages which 'recordsHash' was changed
- *
  * @return {Object[]}
  */
 const extractTargetPages = () => {
-  const targetPages = differenceBy(generationData.generation_0, generationData.generation_1, (page) => {
-    return `${page.path}:${page.recordsHash}`;
-  });
+  const generation0 = new Generation(generationData.generation_0);
+  const generation1 = new Generation(generationData.generation_1);
+  const targetPages = new DiffStyleDate().get(generation0, generation1);
 
-  return orderBy(targetPages, ['dateLast', 'title'], ['desc', 'asc']);
+  return orderBy(targetPages, ['title'], ['asc']);
 };
 
 /**
