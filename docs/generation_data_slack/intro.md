@@ -4,7 +4,7 @@
 ## How ?
 
 This demo plugin uses Amazon S3 to store generation data.
-At every static site generation, new updates are extracted from previous and current update info data.
+At every static site generation, new updates are extracted using [DiffStyleDate](https://github.com/smori1983/vuepress-plugin-frontmatter-update-info/blob/master/src/generation-util/diff-style-date.js) from previous and current update info data.
 Then new updates will be sent to Slack.
 
 See [demo plugin code](https://github.com/smori1983/vuepress-plugin-frontmatter-update-info-demo/tree/master/docs/.vuepress/plugins/generation-data-demo-slack).
