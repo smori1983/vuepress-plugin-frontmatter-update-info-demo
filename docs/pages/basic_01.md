@@ -1,9 +1,9 @@
 ---
 update_info:
-  - date: 2022/09/18
-    description:
-    - Update text (modified).
   - date: 2023/04/21
+    description:
+    - Update text.
+  - date: 2023/04/25
     description:
     - Update text.
 ---
@@ -24,10 +24,10 @@ update_info:
 ```
 ---
 update_info:
-  - date: 2022/09/18
+  - date: 2023/04/21
     description:
     - Update text.
-  - date: 2022/09/19
+  - date: 2023/04/25
     description:
     - Update text.
 ---

@@ -22,8 +22,8 @@ update_info:
 update_info:
   - date: 2022/09/20
     description:
-    - Update text.
-  - date: 2022/09/10
+    - Update text (modified).
+  - date: 2023/04/25
     description:
     - Update text.
 ---

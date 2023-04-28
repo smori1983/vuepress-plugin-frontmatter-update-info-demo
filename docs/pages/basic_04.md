@@ -1,7 +1,7 @@
 ---
 update_info:
   - date: 2022/09/15
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    description: Lorem ipsum dolor sit amet.
 ---
 # Basic 04
 
@@ -17,6 +17,6 @@ update_info:
 ---
 update_info:
   - date: 2022/09/15
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    description: Lorem ipsum dolor sit amet.
 ---
 ```
