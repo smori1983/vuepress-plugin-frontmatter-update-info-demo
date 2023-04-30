@@ -1,9 +1,6 @@
 ---
 update_info:
-  - date: 2023/04/21
-    description:
-    - Update text.
-  - date: 2023/04/25
+  - date: 2023/04/28
     description:
     - Update text.
 ---
@@ -16,7 +13,6 @@ update_info:
 ## Note
 
 - `[[toc]]` is used.
-- Second record has the latest date.
 
 
 ## Frontmatter source
@@ -24,10 +20,7 @@ update_info:
 ```
 ---
 update_info:
-  - date: 2023/04/21
-    description:
-    - Update text.
-  - date: 2023/04/25
+  - date: 2023/04/28
     description:
     - Update text.
 ---
