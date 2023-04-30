@@ -2,7 +2,6 @@
  * @typedef {import('vuepress-types').PluginOptionAPI} PluginOptionAPI
  */
 
-const fs = require('fs');
 const path = require('path');
 const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
 const {
@@ -10,6 +9,7 @@ const {
   GetObjectCommand,
   PutObjectCommand,
 } = require('@aws-sdk/client-s3');
+const config = require('./config');
 
 let data = {
   generation_0: [],
@@ -33,26 +33,10 @@ module.exports = () => ({
   },
 });
 
-let s3Config = null;
-let s3ObjectKey = null;
-
-const localConfigFile = path.resolve(__dirname, 'config.local.js');
-if (fs.existsSync(localConfigFile)) {
-  s3Config = require(localConfigFile);
-  s3ObjectKey = 'vuepress-plugin-frontmatter-update-info.demo.s3.local.json';
-} else if (process.env.S3_CONFIGURED) {
-  s3Config = {
-    clientConfig: {
-      region: process.env.S3_REGION,
-      credentials: {
-        accessKeyId: process.env.S3_ACCESS_KEY_ID,
-        secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-      },
-    },
-    bucket: process.env.S3_BUCKET,
-  };
-  s3ObjectKey = 'vuepress-plugin-frontmatter-update-info.demo.s3.gh.json';
-}
+const {
+  s3Config,
+  s3ObjectKey,
+} = config.get();
 
 hook.addReadyCallback(async (updates) => {
   if (s3Config === null) {
