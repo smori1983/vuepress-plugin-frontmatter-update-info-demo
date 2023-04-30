@@ -1,9 +1,9 @@
 ---
 update_info:
-  - date: 2022/09/01
-    description:
-    - Update information.
-    - Update information.
+- date: 2022/09/01
+  description:
+  - Update information.
+  - Update information.
 ---
 ## Basic 05
 

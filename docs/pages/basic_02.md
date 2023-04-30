@@ -1,18 +1,21 @@
 ---
 update_info:
-  - date: 2022/09/20
-    description:
-    - Update text (modified).
-  - date: 2023/04/25
-    description:
-    - Update text.
+- date: 2022/09/20
+  description:
+  - Update text (modified).
+- date: 2023/04/25
+  description:
+  - Update text.
 ---
 # Basic 02
 
 
+[[toc]]
+
+
 ## Note
 
-- First record has the latest date.
+- `[[toc]]` is used.
 
 
 ## Frontmatter source
@@ -20,11 +23,11 @@ update_info:
 ```
 ---
 update_info:
-  - date: 2022/09/20
-    description:
-    - Update text (modified).
-  - date: 2023/04/25
-    description:
-    - Update text.
+- date: 2022/09/20
+  description:
+  - Update text (modified).
+- date: 2023/04/25
+  description:
+  - Update text.
 ---
 ```

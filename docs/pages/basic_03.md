@@ -9,7 +9,7 @@ update_info:
 
 ## Note
 
-- No descriptions.
+- `description` not defined.
 
 
 ## Frontmatter source
