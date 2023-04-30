@@ -6,8 +6,10 @@ const fs = require('fs');
 const path = require('path');
 const { orderBy } = require('lodash');
 const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
-const Generation = require('vuepress-plugin-frontmatter-update-info/src/generation-util/generation');
-const DiffStyleDate = require('vuepress-plugin-frontmatter-update-info/src/generation-util/diff-style-date');
+const {
+  Generation,
+  DiffStyleDate,
+} = require('vuepress-plugin-frontmatter-update-info/src/generation-util');
 const S3 = require('./s3');
 const Slack = require('./slack');
 

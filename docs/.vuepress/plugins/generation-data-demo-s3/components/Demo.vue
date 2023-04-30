@@ -46,9 +46,11 @@
 <script>
 import OutboundLink from '@vuepress/core/lib/client/components/OutboundLink.vue';
 import data from '@dynamic/generation-data-demo-s3/data';
-import Generation from 'vuepress-plugin-frontmatter-update-info/src/generation-util/generation';
-import DiffStyleDate from 'vuepress-plugin-frontmatter-update-info/src/generation-util/diff-style-date';
-import DiffStyleDateDescription from 'vuepress-plugin-frontmatter-update-info/src/generation-util/diff-style-date-description';
+import {
+  Generation,
+  DiffStyleDate,
+  DiffStyleDateDescription,
+} from 'vuepress-plugin-frontmatter-update-info/src/generation-util';
 
 export default {
   components: {
