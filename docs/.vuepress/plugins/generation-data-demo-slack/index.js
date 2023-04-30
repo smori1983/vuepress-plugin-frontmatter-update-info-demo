@@ -2,14 +2,13 @@
  * @typedef {import('vuepress-types').PluginOptionAPI} PluginOptionAPI
  */
 
-const fs = require('fs');
-const path = require('path');
 const { orderBy } = require('lodash');
 const hook = require('vuepress-plugin-frontmatter-update-info/src/hook');
 const {
   Generation,
   DiffStyleDate,
 } = require('vuepress-plugin-frontmatter-update-info/src/generation-util');
+const config = require('./config');
 const S3 = require('./s3');
 const Slack = require('./slack');
 
@@ -28,34 +27,11 @@ module.exports = () => ({
   ],
 });
 
-let s3Config = null;
-let s3ObjectKey = null;
-let slackConfig = null;
-
-const localConfigFile = path.resolve(__dirname, 'config.local.js');
-if (fs.existsSync(localConfigFile)) {
-  const localConfig = require(localConfigFile);
-  s3Config = localConfig.s3;
-  s3ObjectKey = 'vuepress-plugin-frontmatter-update-info.demo.slack.local.json';
-  slackConfig = localConfig.slack;
-} else if (process.env.S3_CONFIGURED && process.env.SLACK_CONFIGURED) {
-  s3Config = {
-    clientConfig: {
-      region: process.env.S3_REGION,
-      credentials: {
-        accessKeyId: process.env.S3_ACCESS_KEY_ID,
-        secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-      },
-    },
-    bucket: process.env.S3_BUCKET,
-  };
-  s3ObjectKey = 'vuepress-plugin-frontmatter-update-info.demo.slack.gh.json';
-  slackConfig = {
-    token: process.env.SLACK_TOKEN,
-    channel_id: process.env.SLACK_CHANNEL_ID,
-    site_base_path: process.env.SLACK_SITE_BASE_PATH,
-  };
-}
+const {
+  s3Config,
+  s3ObjectKey,
+  slackConfig,
+} = config.get();
 
 hook.addGeneratedCallback(async (updates) => {
   if (s3Config === null || slackConfig === null) {
