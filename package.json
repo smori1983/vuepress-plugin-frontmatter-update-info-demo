@@ -7,7 +7,8 @@
     "dev": "vuepress dev --no-cache docs",
     "build": "vuepress build docs",
     "server": "http-server docs/.vuepress/dist",
-    "test": "mocha test/*"
+    "test": "mocha test/*",
+    "browserlist:update": "npx update-browserslist-db@latest"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.178.0",
