@@ -1,4 +1,4 @@
-# Intro
+# Demo: S3
 
 
 ## How ?
@@ -30,3 +30,9 @@ Register env variables:
 S3 object key: `vuepress-plugin-frontmatter-update-info.demo.s3.gh.json`
 
 See also [GitHub Actions configuration](https://github.com/smori1983/vuepress-plugin-frontmatter-update-info-demo/blob/master/.github/workflows/pages.yml) of this demo site.
+
+
+## Demo
+
+
+<GenerationDataDemoS3Demo/>
