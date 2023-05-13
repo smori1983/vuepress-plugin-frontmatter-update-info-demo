@@ -18,7 +18,7 @@
     "lodash": "^4.17.21",
     "mocha": "^10.0.0",
     "vuepress": "^1.9.7",
-    "vuepress-plugin-frontmatter-update-info": "^1.4",
+    "vuepress-plugin-frontmatter-update-info": "github:smori1983/vuepress-plugin-frontmatter-update-info#199f0fb949312b1753d290f3f2b271e246ad1b82",
     "vuepress-plugin-view-source": "^1.1.0",
     "vuepress-types": "^0.9.4"
   },
