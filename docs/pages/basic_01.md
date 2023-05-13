@@ -2,7 +2,7 @@
 update_info:
 - date: 2023/04/28
   description:
-  - Update text.
+  - Update text (modified).
 ---
 # Basic 01
 
@@ -14,6 +14,6 @@ update_info:
 update_info:
 - date: 2023/04/28
   description:
-  - Update text.
+  - Update text (modified).
 ---
 ```
